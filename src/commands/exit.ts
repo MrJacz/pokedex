@@ -1,4 +1,4 @@
-import { State } from "src/state";
+import { State } from "../state.js";
 
 export function cmdExit(state: State) {
 	console.log("Closing the Pokedex... Goodbye!");

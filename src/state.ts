@@ -1,5 +1,5 @@
 import { createInterface, type Interface } from "readline";
-import { CLICommand, commands } from "src/commands";
+import { CLICommand, commands } from "./commands/index.js";
 
 export type State = {
 	readline: Interface;

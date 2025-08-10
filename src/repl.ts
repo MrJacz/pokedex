@@ -1,4 +1,4 @@
-import { State } from "src/state.js";
+import { State } from "./state.js";
 
 export function cleanInput(input: string): string[] {
 	return input

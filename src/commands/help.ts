@@ -1,4 +1,4 @@
-import { State } from "src/state";
+import { State } from "../state.js";
 
 export function cmdHelp(state: State) {
 	console.log("Welcome to the Pokedex!");

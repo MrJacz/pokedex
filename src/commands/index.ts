@@ -1,4 +1,4 @@
-import { State } from "src/state.js";
+import { State } from "../state.js";
 import { cmdExit } from "./exit.js";
 import { cmdHelp } from "./help.js";
 
