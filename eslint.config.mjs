@@ -10,7 +10,7 @@ export default tseslint.config(
 	tseslint.configs.stylistic,
 	{
 		rules: {
-			"@typescript-eslint/consistent-type-definitions": "off",
+			"@typescript-eslint/consistent-type-definitions": ["error", "type"],
 			"@typescript-eslint/no-non-null-assertion": "off",
 			"@typescript-eslint/no-unsafe-declaration-merging": "off",
 			"@typescript-eslint/no-explicit-any": [
