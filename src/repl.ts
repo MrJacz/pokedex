@@ -11,14 +11,24 @@ export function cleanInput(input: string): string[] {
 export function startREPL(state: State) {
 	state.readline.prompt();
 
-	state.readline.on("line", (line) => {
+	state.readline.on("line", async (line) => {
 		const words = cleanInput(line);
 		if (words.length === 0) return state.readline.prompt();
 
-		const command = state.commands.get(words[0]);
-		if (!command) return console.log("Unknown command");
+		const cmdName = words[0];
+		const args = words.slice(1);
 
-		command.callback(state);
+		const command = state.commands.get(cmdName);
+		if (!command) {
+			console.log(`Unknown command: "${cmdName}". Type "help" for a list of commands.`);
+			return state.readline.prompt();
+		}
+		try {
+			await command.callback(state, ...args);
+		} catch (error) {
+			if (error instanceof Error) console.log(error.message);
+			else console.log(error);
+		}
 		state.readline.prompt();
 	});
 }
